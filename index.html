@@ -2,42 +2,41 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XTDH300TQ6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XTDH300TQ6');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XTDH300TQ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XTDH300TQ6');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Signature Generator</title>
+    <title>JC1 Email Signature Generator</title>
     <!-- Link to Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
 </head>
 <body>
     <h1>J1 Cluster Email Signature Generator</h1>
     <form id="signatureForm">
         <h2>Arabic Information</h2>
-        <label for="arabicName"> Name</label>
+        <label for="arabicName">Name</label>
         <input type="text" id="arabicName" required>
 
-        <label for="arabicPosition"> Position</label>
+        <label for="arabicPosition">Position</label>
         <input type="text" id="arabicPosition" required>
 
-        <label for="arabicDepartment"> Department</label>
-        <input type="text" id="arabicDepartment" required>
+        <label for="arabicDepartment">Department</label>
+        <input type="text" id="arabicDepartment">
 
         <h2>English Information</h2>
-        <label for="englishName"> Name</label>
+        <label for="englishName">Name</label>
         <input type="text" id="englishName" required>
 
-        <label for="englishPosition"> Position</label>
+        <label for="englishPosition">Position</label>
         <input type="text" id="englishPosition" required>
 
-        <label for="englishDepartment"> Department (Optional)</label>
+        <label for="englishDepartment">Department (Optional)</label>
         <input type="text" id="englishDepartment">
 
         <h2>Contact Information</h2>
@@ -68,12 +67,11 @@
         <div id="signatureTemplate">
             <div id="signatureContent"></div>
         </div>
-        <div style="text-align: center; margin-top: 10px;">
+        <div style="text-align: center; margin-top: 5px;">
             <button id="downloadSignatureButton">Download Signature Image</button>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script> <!-- Link to JavaScript -->
 </body>
 </html>
