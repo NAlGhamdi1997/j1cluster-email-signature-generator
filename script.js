@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let signature = `
             <strong class="name" style="color: rgba(79,170,216,255); font-weight: bold; font-size: 20px;">${arabicName}</strong><br>
             <span class="position" style="color: rgba(144,126,102,255); font-weight: bold;">${arabicPosition}</span><br>
-            <span class="department" style="color: rgba(144,126,102,255);">${arabicDepartment}</span><br><br>
+            <span class="department" style="color: rgba(144,126,102,255);">${arabicDepartment}</span><br>
 
             <strong class="name" style="color: rgba(79,170,216,255);">${englishName}</strong><br>
             <span class="position" style="color: rgba(144,126,102,255); font-weight: bold;">${englishPosition}</span><br>
@@ -34,21 +34,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a class="email" href="mailto:${email}" style="color: rgba(25,111,198,255);">${email}</a><br>
             `;
         }
-        if (phone) {
+
+        // Add phone number on its own line, and telephone and external on the next line
+        if (phone || telephone || external) {
+            if (phone) {
+                signature += `
+                    <img src="phone.jpg" alt="Phone Icon" class="icon"> 
+                    <span class="contact-info" style="color: rgba(144,126,102,255);">${phone}</span><br>
+                `;
+            }
+
             signature += `
-                <img src="phone.jpg" alt="Phone Icon" class="icon"> 
-                <span class="contact-info" style="color: rgba(144,126,102,255);">${phone}<br></span>
-            `;
-        }
-        if (telephone) {
-            signature += `
-                <img src="tel.jpg" alt="Telephone Icon" class="icon"> 
-                <span class="contact-info" style="color: rgba(144,126,102,255);">${telephone}<br></span>
-            `;
-        }
-        if (external) {
-            signature += `
-                <span class="contact-info" style="color: rgba(144,126,102,255);">External: ${external}<br></span>
+                <div style="display: flex; align-items: center;">
+                    ${telephone ? `
+                        <img src="tel.jpg" alt="Telephone Icon" class="icon"> 
+                        <span class="contact-info" style="color: rgba(144,126,102,255);">${telephone}</span>
+                    ` : ''}
+                    ${external ? `
+                        <span class="contact-info" style="color: rgba(144,126,102,255); margin-right: 15px;">External: ${external}</span>
+                    ` : ''}
+                </div>
             `;
         }
 
